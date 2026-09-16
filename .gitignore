@@ -1,0 +1,23 @@
+# Entorno virtual de Python
+venv/
+
+# Archivos de caché de Python
+__pycache__/
+*.pyc
+
+# Base de datos local de desarrollo (SQLite)
+db.sqlite3
+
+# Archivos multimedia subidos por usuarios y archivos estáticos recopilados
+media/
+staticfiles/
+
+# Variables de entorno y credenciales secretas
+.env
+
+# Archivos de registros y errores
+*.log
+
+# Configuraciones específicas del editor (VS Code) y del sistema operativo (macOS)
+.vscode/
+.DS_Store
