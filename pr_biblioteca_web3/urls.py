@@ -1,22 +1,10 @@
-"""
-URL configuration for pr_biblioteca_web3 project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/6.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.http import HttpResponse
 
 urlpatterns = [
+    path('', lambda request: HttpResponse('<body style="margin:0;font-family:sans-serif;background:#1a252f;display:flex;justify-content:center;align-items:center;min-height:100vh;"><div style="background:#fff;padding:40px;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,0.15);text-align:center;max-width:500px;width:90%;border-top:5px solid #e74c3c;"><h1 style="color:#2c3e50;margin:0;font-size:2rem;">Página Principal</h1><p style="color:#7f8c8d;margin:15px 0 0 0;font-size:1.1rem;">Bienvenido a la biblioteca.</p></div></body>')),
+
     path('admin/', admin.site.urls),
+    path('catalogo/', include('app_catalogo.urls')),
 ]
